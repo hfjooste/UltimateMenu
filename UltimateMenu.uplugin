@@ -1,0 +1,35 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "0.0.1",
+	"FriendlyName": "Ultimate Menu",
+	"Description": "Create complex menus without writing any code",
+	"Category": "UI",
+	"CreatedBy": "Henry Jooste",
+	"CreatedByURL": "https://github.com/hfjooste/UltimateMenu",
+	"DocsURL": "https://github.com/hfjooste/UltimateMenu",
+	"MarketplaceURL": "",
+	"SupportURL": "https://github.com/hfjooste/UltimateMenu",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": true,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "UltimateMenu",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "UltimateMenuEditor",
+			"Type": "UncookedOnly",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
+		}
+	]
+}
