@@ -8,12 +8,12 @@ struct ULTIMATEMENU_API FUltimateMenuLayoutConfig
 {
 	GENERATED_USTRUCT_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Layout")
 	TEnumAsByte<EHorizontalAlignment> HorizontalAlignment = HAlign_Fill;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Layout")
 	TEnumAsByte<EVerticalAlignment> VerticalAlignment = VAlign_Center;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Layout")
 	FMargin Padding;
 };

@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
-#include "UltimateMenu/Settings/UltimateMenuTextValue.h"
+#include "GameFramework/Actor.h"
 #include "MenuManager.generated.h"
 
 class UUltimateMenuMenuConfig;
@@ -14,34 +14,34 @@ class ULTIMATEMENU_API AMenuManager : public AActor
 	GENERATED_BODY()
 	
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Ultimate Menu")
 	FName InitialMenuName = NAME_None;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Ultimate Menu")
 	int ZOrder;
 	
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void PushMenu(FName MenuName);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void PopMenu();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	virtual void ItemSelected(FName CallbackId);
 
-	UFUNCTION(BlueprintImplementableEvent, meta=(DisplayName = "ItemSelected"))
+	UFUNCTION(BlueprintImplementableEvent, Category = "Ultimate Menu", meta=(DisplayName = "ItemSelected"))
 	void ReceiveItemSelected(FName CallbackId);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	virtual void BackNavigationPerformed(FName CallbackId);
 
-	UFUNCTION(BlueprintImplementableEvent, meta=(DisplayName = "BackNavigationPerformed"))
+	UFUNCTION(BlueprintImplementableEvent, Category = "Ultimate Menu", meta=(DisplayName = "BackNavigationPerformed"))
 	void ReceiveBackNavigationPerformed(FName CallbackId);
 
-	UFUNCTION(BlueprintCallable, BlueprintPure)
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Ultimate Menu")
 	virtual FText GetText(FName TextId);
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, meta=(DisplayName = "GetText"))
+	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, Category = "Ultimate Menu", meta=(DisplayName = "GetText"))
 	FText ReceiveGetText(FName TextId);
 
 protected:

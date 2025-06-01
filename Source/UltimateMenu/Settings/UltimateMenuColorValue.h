@@ -9,9 +9,9 @@ struct ULTIMATEMENU_API FUltimateMenuColorValue
 {
 	GENERATED_USTRUCT_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Color")
 	EUltimateMenuColorType Color;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Color")
 	float Opacity = 1.0f;
 };

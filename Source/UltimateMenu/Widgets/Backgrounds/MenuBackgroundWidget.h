@@ -14,18 +14,18 @@ class ULTIMATEMENU_API UMenuBackgroundWidget : public UUserWidget
 	GENERATED_BODY()
 	
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UImage* BackgroundImage;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UImage* BorderImage;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UBackgroundBlur* BelowBackgroundBlur;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UBackgroundBlur* AboveBackgroundBlur;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void ApplyConfig(UUltimateMenuMenuBackgroundConfig* Config);
 };

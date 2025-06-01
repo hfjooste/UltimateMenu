@@ -17,35 +17,35 @@ class ULTIMATEMENU_API UFocusableWidget : public UThemeableWidget
 		const FUltimateMenuMenuItemConfig&, Config);
 	
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	USizeBox* SizeBox;
 	
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FFocusableWidgetFocusedDelegate OnFocused;
 
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FUltimateMenuButtonSelectedDelegate OnSelected;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ultimate Menu")
 	EUltimateMenuMenuType Type;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void UpdateConfig(EUltimateMenuMenuType MenuType, const FUltimateMenuMenuItemConfig& MenuItemConfig);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void ForceSelect();
 	
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void ForceFocus();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void ForceUnfocus();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void UpdateFocus(bool IsFocused);
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Ultimate Menu")
 	FUltimateMenuMenuItemConfig Config;
 	
 	virtual void ApplyThemeAfterFocusUpdate(bool IsFocused);

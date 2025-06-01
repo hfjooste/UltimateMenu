@@ -15,10 +15,10 @@ class ULTIMATEMENU_API UUltimateMenuText : public UThemeableWidget
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UTextBlock* TextBlock;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void InitializeText(AMenuManager* Manager, const FUltimateMenuTextValue& Text,
 		const FUltimateMenuTextAppearance& TextAppearance);
 

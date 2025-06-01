@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
+#include "Engine/DataAsset.h"
 #include "UltimateMenuColorValue.h"
 #include "UltimateMenuLayoutConfig.h"
 #include "UltimateMenuTextAppearance.h"

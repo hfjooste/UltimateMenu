@@ -1,5 +1,6 @@
 ﻿#include "UltimateMenuUtils.h"
 
+#include "Runtime/Launch/Resources/Version.h"
 #include "Blueprint/WidgetLayoutLibrary.h"
 #include "Components/HorizontalBoxSlot.h"
 #include "Components/OverlaySlot.h"
@@ -99,7 +100,12 @@ void UUltimateMenuUtils::ApplyImageAppearance(UImage* Image, const UUltimateMenu
 		break;
 	}
 
+#if ENGINE_MINOR_VERSION < 2
 	const FVector2D CurrentSize = Image->Brush.GetImageSize();
+#else
+	const FVector2D CurrentSize = Image->GetBrush().GetImageSize();
+#endif
+	
 	Image->SetDesiredSizeOverride(FVector2D(
 		Appearance->ImageWidth.bOverride ? Appearance->ImageWidth.Value : CurrentSize.X,
 		Appearance->ImageHeight.bOverride ? Appearance->ImageHeight.Value : CurrentSize.Y));

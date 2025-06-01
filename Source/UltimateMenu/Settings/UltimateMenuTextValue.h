@@ -9,14 +9,14 @@ struct ULTIMATEMENU_API FUltimateMenuTextValue
 {
 	GENERATED_USTRUCT_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Text")
 	EUltimateMenuTextType Type;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly,
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Text",
 		meta=(EditCondition = "Type == EUltimateMenuTextType::Static", EditConditionHides))
 	FText Text;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly,
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Text",
 		meta=(EditCondition = "Type == EUltimateMenuTextType::Dynamic", EditConditionHides))
 	FName TextId;
 };

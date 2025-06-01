@@ -19,35 +19,35 @@ class ULTIMATEMENU_API UMenuWidget : public UInputWidget
 	GENERATED_BODY()
 	
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	EUltimateMenuMenuNavigationDirection NavigationDirection;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UBackgroundBlur* BelowScreenBlur;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UBackgroundBlur* AboveScreenBlur;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UBackgroundBlur* MenuBlur;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	USizeBox* SizeBox;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UOverlay* BackgroundOverlay;
 	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UPanelWidget* Content;
 
-	UFUNCTION(BlueprintCallable)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu")
+	EUltimateMenuMenuNavigationDirection NavigationDirection;
+
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void LoadMenu(AMenuManager* Manager, UUltimateMenuMenuAppearance* Appearance,
 		const FUltimateMenuMenuConfigData& NewMenuConfig);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void SetAsActive();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void SetAsInactive();
 
 	virtual void RemoveFromParent() override;

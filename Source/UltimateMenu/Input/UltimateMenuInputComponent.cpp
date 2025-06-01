@@ -1,5 +1,6 @@
 ﻿#include "UltimateMenuInputComponent.h"
 
+#include "Engine/LocalPlayer.h"
 #include "Kismet/GameplayStatics.h"
 #include "UltimateMenu/Settings/UltimateMenuSettings.h"
 
@@ -66,7 +67,6 @@ void UUltimateMenuInputComponent::EnableInput()
 	}
 
 	PlayerController->PushInputComponent(this);
-	//InputSubsystem->AddMappingContext(InputMappingContext, 0);
 }
 
 void UUltimateMenuInputComponent::DisableInput()
@@ -77,45 +77,44 @@ void UUltimateMenuInputComponent::DisableInput()
 	}
 
 	PlayerController->PopInputComponent(this);
-	//InputSubsystem->RemoveMappingContext(InputMappingContext);
 }
 
-void UUltimateMenuInputComponent::NavigateUp() const
+void UUltimateMenuInputComponent::NavigateUp()
 {
 	OnNavigateUp.Broadcast();
 }
 
-void UUltimateMenuInputComponent::NavigateDown() const
+void UUltimateMenuInputComponent::NavigateDown()
 {
 	OnNavigateDown.Broadcast();
 }
 
-void UUltimateMenuInputComponent::NavigateLeft() const
+void UUltimateMenuInputComponent::NavigateLeft()
 {
 	OnNavigateLeft.Broadcast();
 }
 
-void UUltimateMenuInputComponent::NavigateRight() const
+void UUltimateMenuInputComponent::NavigateRight()
 {
 	OnNavigateRight.Broadcast();
 }
 
-void UUltimateMenuInputComponent::TabLeft() const
+void UUltimateMenuInputComponent::TabLeft()
 {
 	OnTabLeft.Broadcast();
 }
 
-void UUltimateMenuInputComponent::TabRight() const
+void UUltimateMenuInputComponent::TabRight()
 {
 	OnTabRight.Broadcast();
 }
 
-void UUltimateMenuInputComponent::Select() const
+void UUltimateMenuInputComponent::Select()
 {
 	OnSelect.Broadcast();
 }
 
-void UUltimateMenuInputComponent::Back() const
+void UUltimateMenuInputComponent::Back()
 {
 	OnBack.Broadcast();
 }

@@ -62,7 +62,7 @@ void UMenuWidget::LoadMenu(AMenuManager* Manager, UUltimateMenuMenuAppearance* A
 	{
 		UMenuBackgroundWidget* Background = CreateWidget<UMenuBackgroundWidget>(
 			GetWorld(), Appearance->BackgroundWidgetClass);
-		BackgroundOverlay->InsertChildAt(0, Background);
+		BackgroundOverlay->AddChild(Background);
 		Background->ApplyConfig(Appearance->BackgroundConfig); 
 	}
 }

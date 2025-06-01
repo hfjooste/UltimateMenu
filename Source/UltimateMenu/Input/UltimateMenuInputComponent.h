@@ -22,37 +22,37 @@ class UUltimateMenuInputComponent : public UEnhancedInputComponent
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUltimateMenuInputBackDelegate);
 
 public:
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FUltimateMenuInputNavigateUpDelegate OnNavigateUp;
 
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FUltimateMenuInputNavigateDownDelegate OnNavigateDown;
 
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FUltimateMenuInputNavigateLeftDelegate OnNavigateLeft;
 
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FUltimateMenuInputNavigateRightDelegate OnNavigateRight;
 
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FUltimateMenuInputTabLeftDelegate OnTabLeft;
 
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FUltimateMenuInputTabRightDelegate OnTabRight;
 
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FUltimateMenuInputSelectDelegate OnSelect;
 
-	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Ultimate Menu")
 	FUltimateMenuInputBackDelegate OnBack;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void Initialize(const UObject* WorldContextObject);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void EnableInput();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void DisableInput();
 	
 protected:
@@ -69,26 +69,26 @@ private:
 	UInputMappingContext* InputMappingContext;
 
 	UFUNCTION()
-	void NavigateUp() const;
+	void NavigateUp();
 
 	UFUNCTION()
-	void NavigateDown() const;
+	void NavigateDown();
 
 	UFUNCTION()
-	void NavigateLeft() const;
+	void NavigateLeft();
 
 	UFUNCTION()
-	void NavigateRight() const;
+	void NavigateRight();
 
 	UFUNCTION()
-	void TabLeft() const;
+	void TabLeft();
 
 	UFUNCTION()
-	void TabRight() const;
+	void TabRight();
 
 	UFUNCTION()
-	void Select() const;
+	void Select();
 
 	UFUNCTION()
-	void Back() const;
+	void Back();
 };

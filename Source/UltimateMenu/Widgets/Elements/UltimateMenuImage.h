@@ -13,10 +13,10 @@ class ULTIMATEMENU_API UUltimateMenuImage : public UThemeableWidget
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Ultimate Menu", meta=(BindWidget))
 	UImage* Image;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void InitializeImage(UUltimateMenuImageAppearance* ImageAppearance);
 
 protected:

@@ -8,6 +8,6 @@ struct ULTIMATEMENU_API FUltimateMenuMenuBehaviourRemoved
 {
 	GENERATED_USTRUCT_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Removed")
 	bool bUnpauseWhenRemoved;
 };

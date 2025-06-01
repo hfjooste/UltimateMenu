@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
+#include "Engine/DataAsset.h"
 #include "UltimateMenuMenuBehaviour.h"
 #include "UltimateMenuSizeBoxConfig.h"
 #include "UltimateMenu/Widgets/Backgrounds/MenuBackgroundWidget.h"

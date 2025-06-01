@@ -9,21 +9,21 @@ struct ULTIMATEMENU_API FUltimateMenuSizeBoxConfig
 {
 	GENERATED_USTRUCT_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Size")
 	FUltimateMenuFloatOverride Width;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Size")
 	FUltimateMenuFloatOverride MinWidth;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Size")
 	FUltimateMenuFloatOverride MaxWidth;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Size")
 	FUltimateMenuFloatOverride Height;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Size")
 	FUltimateMenuFloatOverride MinHeight;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Size")
 	FUltimateMenuFloatOverride MaxHeight;
 };

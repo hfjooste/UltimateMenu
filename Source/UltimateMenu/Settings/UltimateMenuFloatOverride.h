@@ -8,9 +8,10 @@ struct ULTIMATEMENU_API FUltimateMenuFloatOverride
 {
 	GENERATED_USTRUCT_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Float")
 	bool bOverride;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(EditCondition = "bOverride", EditConditionHides))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Float",
+		meta=(EditCondition = "bOverride", EditConditionHides))
 	float Value;
 };

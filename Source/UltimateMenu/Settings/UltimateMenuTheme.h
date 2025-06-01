@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
+#include "Engine/DataAsset.h"
 #include "UltimateMenuMenuType.h"
 #include "UltimateMenuTheme.generated.h"
 
@@ -15,15 +16,15 @@ class ULTIMATEMENU_API UUltimateMenuTheme : public UPrimaryDataAsset
 	GENERATED_BODY()
 	
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Colors")
 	UUltimateMenuColorPalette* ColorPalette;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Appearance")
 	TMap<EUltimateMenuMenuType, UUltimateMenuMenuAppearance*> MenuAppearance;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Appearance")
 	TMap<EUltimateMenuMenuType, UUltimateMenuMenuItemAppearance*> MenuItemAppearance;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Appearance")
 	TMap<EUltimateMenuMenuType, UUltimateMenuButtonAppearance*> ButtonAppearance;
 };

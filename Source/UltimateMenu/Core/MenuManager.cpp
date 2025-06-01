@@ -63,7 +63,7 @@ void AMenuManager::PopMenu()
 
 	UMenuWidget* PoppedMenu = Menus.Pop();
 	PoppedMenu->DisableInput();
-	PoppedMenu->RemoveFromViewport();
+	PoppedMenu->RemoveFromParent();
 	
 	if (!Menus.IsEmpty())
 	{
