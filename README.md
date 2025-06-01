@@ -23,6 +23,32 @@ The Ultimate Menu plugin comes with the following features:
 
 ## 🛠️ Installation
 
+### Engine Plugin
+<i><strong>* The same process needs to be repeated whenever you want to update the plugin</strong></i>
+<ol>
+    <li>Download the latest release from <a href="https://github.com/hfjooste/UltimateMenu/releases" target="_blank">GitHub</a></li>
+    <li>Navigate to <code>C:\Program Files\Epic Games\UE_{VERSION}\Engine\Plugins</code></li>
+    <li>Create a <code>Marketplace</code> folder if needed</li>
+    <li>Extract the release and copy to the <code>Marketplace</code> folder</li>
+    <li>Open Unreal Engine</li>
+    <li>Click on <code>Edit > Plugins</code></li>
+    <li>Enable the plugin under the <code>Built-in > UI</code> category</li>
+    <li>Restart Unreal Engine</li>
+</ol>
+
+### Project Plugin
+<i><strong>* The same process needs to be repeated whenever you want to update the plugin</strong></i>
+<ol>
+    <li>Download the latest release from <a href="https://github.com/hfjooste/UltimateMenu/releases" target="_blank">GitHub</a></li>
+    <li>Navigate to your project directory
+    <li>Create a <code>Plugins</code> folder if needed</li>
+    <li>Extract the release and copy to the <code>Plugins</code> folder</li>
+    <li>Open Unreal Engine</li>
+    <li>Click on <code>Edit > Plugins</code></li>
+    <li>Enable the plugin under the <code>Built-in > UI</code> category</li>
+    <li>Restart Unreal Engine</li>
+</ol>
+
 ### Project Submodule
 <ol>
     <li>Open your terminal</li>
