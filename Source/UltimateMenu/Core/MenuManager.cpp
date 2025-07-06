@@ -85,3 +85,19 @@ FText AMenuManager::GetText(const FName TextId)
 {
 	return ReceiveGetText(TextId);
 }
+
+void AMenuManager::EnableMenuInput()
+{
+	if (!Menus.IsEmpty())
+	{
+		Menus.Last()->EnableInput();
+	}
+}
+
+void AMenuManager::DisableMenuInput()
+{
+	if (!Menus.IsEmpty())
+	{
+		Menus.Last()->DisableInput();
+	}
+}

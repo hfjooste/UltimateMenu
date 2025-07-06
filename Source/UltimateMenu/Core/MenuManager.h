@@ -44,6 +44,12 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, Category = "Ultimate Menu", meta=(DisplayName = "GetText"))
 	FText ReceiveGetText(FName TextId);
 
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
+	void EnableMenuInput();
+
+	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
+	void DisableMenuInput();
+
 protected:
 	virtual void BeginPlay() override;
 
