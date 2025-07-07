@@ -66,6 +66,7 @@ void UUltimateMenuInputComponent::EnableInput()
 		return;
 	}
 
+	InputSubsystem->AddMappingContext(InputMappingContext, 0);
 	PlayerController->PushInputComponent(this);
 }
 
@@ -76,6 +77,7 @@ void UUltimateMenuInputComponent::DisableInput()
 		return;
 	}
 
+	InputSubsystem->RemoveMappingContext(InputMappingContext);
 	PlayerController->PopInputComponent(this);
 }
 
