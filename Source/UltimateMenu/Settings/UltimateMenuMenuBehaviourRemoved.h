@@ -9,5 +9,8 @@ struct ULTIMATEMENU_API FUltimateMenuMenuBehaviourRemoved
 	GENERATED_USTRUCT_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Removed")
+	bool bHideCursorWhenRemoved = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Removed")
 	bool bUnpauseWhenRemoved;
 };

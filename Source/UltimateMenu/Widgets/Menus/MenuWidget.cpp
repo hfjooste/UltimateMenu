@@ -83,7 +83,21 @@ void UMenuWidget::SetAsActive()
 		BelowScreenBlur->SetBlurStrength(MenuBehaviour.Active.BlurScreenStrength);
 	}
 
-	if (IsValid(MenuAppearance) && MenuBehaviour.Active.bPauseWhenActive)
+	if (!IsValid(MenuAppearance))
+	{
+		return;
+	}
+
+	if (MenuBehaviour.Active.bShowCursorWhenActive)
+	{
+		APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+		if (IsValid(PlayerController))
+		{
+			PlayerController->SetShowMouseCursor(true);
+		}
+	}
+
+	if (MenuBehaviour.Active.bPauseWhenActive)
 	{
 		UGameplayStatics::SetGamePaused(GetWorld(), true);
 	}
@@ -99,6 +113,15 @@ void UMenuWidget::SetAsInactive()
 	DisableInput();
 	BelowScreenBlur->SetVisibility(ESlateVisibility::Collapsed);
 	BelowScreenBlur->SetBlurStrength(0.0f);
+
+	if (MenuBehaviour.Inactive.bHideCursorWhenInactive)
+	{
+		APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+		if (IsValid(PlayerController))
+		{
+			PlayerController->SetShowMouseCursor(false);
+		}
+	}
 	
 	if (MenuBehaviour.Inactive.bUnpauseWhenInactive)
 	{
@@ -126,7 +149,21 @@ void UMenuWidget::SetAsInactive()
 void UMenuWidget::RemoveFromParent()
 {
 	Super::RemoveFromParent();
-	if (IsValid(MenuAppearance) && MenuBehaviour.Removed.bUnpauseWhenRemoved)
+	if (!IsValid(MenuAppearance))
+	{
+		return;
+	}
+
+	if (MenuBehaviour.Removed.bHideCursorWhenRemoved)
+	{
+		APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+		if (IsValid(PlayerController))
+		{
+			PlayerController->SetShowMouseCursor(false);
+		}	
+	}
+	
+	if (MenuBehaviour.Removed.bUnpauseWhenRemoved)
 	{
 		UGameplayStatics::SetGamePaused(GetWorld(), false);
 	}

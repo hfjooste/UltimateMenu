@@ -9,6 +9,9 @@ struct ULTIMATEMENU_API FUltimateMenuMenuBehaviourActive
 	GENERATED_USTRUCT_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Active")
+	bool bShowCursorWhenActive = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Active")
 	bool bPauseWhenActive;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Active")

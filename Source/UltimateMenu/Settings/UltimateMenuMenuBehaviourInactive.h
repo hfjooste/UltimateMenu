@@ -13,6 +13,10 @@ struct ULTIMATEMENU_API FUltimateMenuMenuBehaviourInactive
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Inactive",
 		meta=(EditCondition = "!bAlwaysActive", EditConditionHides))
+	bool bHideCursorWhenInactive;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Inactive",
+		meta=(EditCondition = "!bAlwaysActive", EditConditionHides))
 	bool bUnpauseWhenInactive;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Inactive",
