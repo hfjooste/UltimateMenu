@@ -1,5 +1,6 @@
 ﻿#include "MenuManager.h"
 
+#include "Kismet/GameplayStatics.h"
 #include "UltimateMenu/Settings/UltimateMenuMenuAppearance.h"
 #include "UltimateMenu/Settings/UltimateMenuMenuConfig.h"
 #include "UltimateMenu/Settings/UltimateMenuSettings.h"
@@ -10,6 +11,8 @@
 void AMenuManager::BeginPlay()
 {
 	Super::BeginPlay();
+	PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	
 	const UUltimateMenuSettings* Settings = GetDefault<UUltimateMenuSettings>();
 	Theme = IsValid(Settings) ? Settings->Theme.LoadSynchronous() : nullptr;
 	MenuConfig = IsValid(Settings) ? Settings->Menus.LoadSynchronous() : nullptr;
@@ -52,6 +55,13 @@ void AMenuManager::PushMenu(const FName MenuName)
 	
 	Menus.Push(MenuWidget);
 	Menus.Last()->SetAsActive();
+
+	if (bAutomaticallyUpdateInputMode)
+	{
+		FInputModeUIOnly InputMode;
+		InputMode.SetWidgetToFocus(MenuWidget->TakeWidget());
+		PlayerController->SetInputMode(InputMode);	
+	}
 }
 
 void AMenuManager::PopMenu()
@@ -68,6 +78,12 @@ void AMenuManager::PopMenu()
 	if (!Menus.IsEmpty())
 	{
 		Menus.Last()->SetAsActive();
+		return;
+	}
+
+	if (bAutomaticallyUpdateInputMode)
+	{
+		PlayerController->SetInputMode(FInputModeGameOnly());	
 	}
 }
 

@@ -19,6 +19,9 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Ultimate Menu")
 	int ZOrder;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Ultimate Menu")
+	bool bAutomaticallyUpdateInputMode = true;
 	
 	UFUNCTION(BlueprintCallable, Category = "Ultimate Menu")
 	void PushMenu(FName MenuName);
@@ -51,6 +54,9 @@ public:
 	void DisableMenuInput();
 
 protected:
+	UPROPERTY()
+	APlayerController* PlayerController;
+	
 	virtual void BeginPlay() override;
 
 private:
