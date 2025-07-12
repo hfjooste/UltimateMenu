@@ -58,7 +58,8 @@ void AMenuManager::PushMenu(const FName MenuName)
 
 	if (bAutomaticallyUpdateInputMode)
 	{
-		FInputModeUIOnly InputMode;
+		FInputModeGameAndUI InputMode;
+		InputMode.SetHideCursorDuringCapture(false);
 		InputMode.SetWidgetToFocus(MenuWidget->TakeWidget());
 		PlayerController->SetInputMode(InputMode);	
 	}
